@@ -1,5 +1,3 @@
-delete  from station;
-
 insert  into station
 select  substr(line, 1, 7) as 'Site', 
         substr(line, 9, 4) as 'Dist', 
@@ -23,5 +21,5 @@ select  substr(line, 1, 7) as 'Site',
         case when substr(line, 110, 10) like '%..%' then null else substr(line, 110, 10) end as 'Height',
         case when substr(line, 121, 8) like '%..%' then null else substr(line, 121, 8) end as 'BarHeight',
         case when substr(line, 130, 6) like '%..%' then null else substr(line, 130, 6) end as 'WMO'        
-from import limit 4,20112;
+from <<TABLE>> limit 4,20112;
 
